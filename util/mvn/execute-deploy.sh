@@ -187,3 +187,7 @@ deploy_library \
 deploy_library \
   twister2/tset/src/java \
   tset-java
+
+deploy_library \
+  twister2/dl/src/java \
+  twister2dl-java

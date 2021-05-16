@@ -50,9 +50,9 @@ public class MPIWorkerManager implements IWorkerFailureListener, IJobMasterFailu
 
     int workerID = workerController.getWorkerInfo().getWorkerID();
 
-    LOG.info("Waiting on the init barrier before starting IWorker: " + workerID
+    /*LOG.info("Waiting on the init barrier before starting IWorker: " + workerID
         + " with restartCount: " + workerController.workerRestartCount()
-        + " and with re-executionCount: " + JobProgress.getWorkerExecuteCount());
+        + " and with re-executionCount: " + JobProgress.getWorkerExecuteCount());*/
     try {
       workerController.waitOnInitBarrier();
       firstInitBarrierProceeded = true;

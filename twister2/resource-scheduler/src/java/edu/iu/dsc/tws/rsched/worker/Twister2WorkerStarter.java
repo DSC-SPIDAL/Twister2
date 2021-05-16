@@ -59,7 +59,7 @@ public class Twister2WorkerStarter implements IWorker {
     try {
       Object object = ReflectionUtils.newInstance(workerClass);
       worker = (Twister2Worker) object;
-      LOG.info("loaded worker class: " + workerClass);
+      //LOG.info("loaded worker class: " + workerClass);
       worker.execute(workerEnv);
     } catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
       LOG.severe(String.format("failed to load the worker class %s", workerClass));

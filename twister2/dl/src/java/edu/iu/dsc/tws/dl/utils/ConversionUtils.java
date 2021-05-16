@@ -1,0 +1,67 @@
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//  http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+package edu.iu.dsc.tws.dl.utils;
+
+import edu.iu.dsc.tws.dl.graph.Graph;
+import edu.iu.dsc.tws.dl.graph.StaticGraph;
+import edu.iu.dsc.tws.dl.module.AbstractModule;
+import edu.iu.dsc.tws.dl.module.mkldnn.MklDnnModule;
+import edu.iu.dsc.tws.dl.utils.graph.IRGraph;
+
+public final class ConversionUtils {
+
+  private ConversionUtils() {
+  }
+
+  /**
+   * convert model to ir graph and build
+   *
+   * @param model
+   * @return
+   */
+  public static AbstractModule convert(AbstractModule model) {
+    if (model instanceof IRGraph) {
+      IRGraph g = (IRGraph) model;
+      if (model.isFloat()) {
+        g.toFloat();
+      }
+      if (g.isBuild()) {
+        return g;
+      } else {
+        return g.build();
+      }
+    } else if (!(model instanceof MklDnnModule) && model.isMklDnn()) {
+      Graph m;
+      if (!(model instanceof Graph)) {
+        m = model.toGraph();
+      } else {
+        m = (Graph) model;
+      }
+      if (!(m instanceof StaticGraph)) {
+        return model;
+      }
+      AbstractModule ir = (AbstractModule) ((StaticGraph) m).toIRgraph();
+      if (model.isTraining()) {
+        ir.training();
+      } else {
+        ir.evaluate();
+      }
+      if (model.isFloat()) {
+        ir.toFloat();
+      }
+      return ir;
+    } else {
+      return model;
+    }
+  }
+
+}

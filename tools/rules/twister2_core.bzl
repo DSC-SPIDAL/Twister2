@@ -110,6 +110,12 @@ def twister2_core_tset_files():
         "@maven//:com_google_re2j_re2j"
     ]
 
+def twister2_core_dl_files():
+    return [
+        "//twister2/dl/src/java:twister2dl-java",
+        "@com_intel_analytics_bigdl_core_dist_all//jar",
+    ]
+
 def twister2_storm_files():
     return [
         "//twister2/compatibility/storm:twister2-storm",

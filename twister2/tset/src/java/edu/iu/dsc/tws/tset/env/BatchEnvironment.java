@@ -129,6 +129,7 @@ public class BatchEnvironment extends TSetEnvironment {
     return sourceT;
   }
 
+
   public RowSourceTSet createRowSource(String name, SourceFunc<Row> source,
                                        int parallelism) {
     RowSourceTSet sourceT = new RowSourceTSet(this, name, source, parallelism, null);
@@ -168,10 +169,16 @@ public class BatchEnvironment extends TSetEnvironment {
   }
 
   // get data from a tset and update the another
-  private <T, ST extends BaseTSet<T> & StorableTBase<T>> void updateTSet(ST tSet, ST updateTSet) {
+  public <T, ST extends BaseTSet<T> & StorableTBase<T>> void updateTSet(ST tSet, ST updateTSet) {
     // get the data from the evaluation
     DataObject<T> data = getData(tSet.getId());
 
+    // update the data mapping for targetTSet
+    addData(updateTSet.getId(), data);
+  }
+
+  public <T, ST extends BaseTSet<T> & StorableTBase<T>> void updateTSet(DataObject<T> data,
+                                                                        ST updateTSet) {
     // update the data mapping for targetTSet
     addData(updateTSet.getId(), data);
   }

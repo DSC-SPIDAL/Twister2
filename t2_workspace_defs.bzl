@@ -87,6 +87,7 @@ def load_modules():
             "io.netty:netty-all:4.1.27.Final",
             "io.netty:netty-transport:4.1.27.Final",
             "io.netty:netty-transport-native-epoll:4.1.27.Final",
+            "org.apache.commons:commons-math3:3.6.1",
         ],
         repositories = [
             "https://repo1.maven.org/maven2",
@@ -327,3 +328,24 @@ def load_modules():
     _maven_import(artifact = "org.easymock:easymock:4.0.2", licenses = ["notice"], sha256 = "104370107ef64d115e642cbdc14cea438a8d076f5aee9a9cb7882dc9a8ed4123")
     _maven_import(artifact = "org.apache.commons:commons-collections4:4.4", licenses = ["notice"], sha256 = "1df8b9430b5c8ed143d7815e403e33ef5371b2400aadbe9bda0883762e0846d1")
     _maven_import(artifact = "org.apache.commons:commons-configuration2:2.6", licenses = ["notice"], sha256 = "225788911e53af0b29a31a18e0d03b05d86aa9c9e0b3c6686982c30c10f931fb")
+
+
+    #for DL
+    _maven_import(artifact = "org.apache.maven:maven-plugin-api:2.0",licenses = ["notice"],sha256 = "5b62626069d85bb463314572734988d47bc98aab9f0ed48d2f1f9554960f5a35",)
+    _maven_import(artifact = "org.qunix:structure-maven-plugin:0.0.2",licenses = ["notice"],sha256 = "5f07ad70ba250c2fd49937ea6cbc1cbb51d8facd43872fbf65dff47e6d8858fc",)
+    _maven_import(artifact = "org.apache.maven:maven-profile:2.0.8",licenses = ["notice"],sha256 = "bd566c2fdb896e3dd157dc3e49b3c10f93250daaa6462af3cd42ad5b4aeda0a3",)
+    _maven_import(artifact = "org.hamcrest:hamcrest-core:1.3",licenses = ["notice"],sha256 = "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",)
+    _maven_import(artifact = "org.apache.maven:maven-plugin-registry:2.0.8",licenses = ["notice"],sha256 = "a7e77626ec4c8382a4c11ba808684402582693df00f0c39f7c0fc02cd1ece9ab",)
+    _maven_import(artifact = "org.apache.maven:maven-repository-metadata:2.0.8",licenses = ["notice"],sha256 = "aff8473e802e4e1c226a777a198f72fbdf7ef36f6f972df6de763b767f652ee1",)
+    _maven_import(artifact = "org.apache.maven:maven-settings:2.0.8",licenses = ["notice"],sha256 = "e1873a36ea2debc0bb6210c3064faae91cf12108e9f8b9845e283022f58ecb46",)
+    _maven_import(artifact = "classworlds:classworlds:1.1",licenses = ["notice"],sha256 = "4e3e0ad158ec60917e0de544c550f31cd65d5a97c3af1c1968bf427e4a9df2e4",)
+    _maven_import(artifact = "org.apache.maven.wagon:wagon-provider-api:1.0",licenses = ["notice"],sha256 = "b28dd1302ac34433d8d1b45fb254e093cd7b47277441af2018c8a3a4d8c1a60d",)
+    _maven_import(artifact = "org.apache.maven:maven-artifact-manager:2.0.8",licenses = ["notice"],sha256 = "c257564b252dc69ff3f3603971164fcb387adbd000818e72c959e6be7b6319cd",)
+    _maven_import(artifact = "org.apache.maven:maven-artifact:2.0.8",licenses = ["notice"],sha256 = "5cf23417cdee6a8e1eb6b9c015c8feea62cedb7dceb3ad098e6869569fcfd1c0",)
+    _maven_import(artifact = "org.apache.maven:maven-model:2.0.8",licenses = ["notice"],sha256 = "51cde4f45d74720eaf567444d88c9ffdfc6896dd58dcc459403f6613d8439255",)
+    _maven_import(artifact = "org.apache.maven:maven-project:2.0.8",licenses = ["notice"],sha256 = "46799ed8812c96f1e651958cbd864155cc8a9ae8d4ebe2392b845d232a910d31",)
+    _maven_import(artifact = "junit:junit:4.11",licenses = ["notice"],sha256 = "90a8e1603eeca48e7e879f3afbc9560715322985f39a274f6f6070b43f9d06fe",)
+    _maven_import(artifact = "org.codehaus.plexus:plexus-utils:1.4.6",licenses = ["notice"],sha256 = "b46fe183dc28526d083287817e6374ad460cef2d780f6096d3ea46caa0a25106",)
+    _maven_import(artifact = "org.apache.commons:commons-lang3:3.3.2",licenses = ["notice"],sha256 = "6b81d10754dadf184d386011486e6509c2cc0c3d33565ced4fb4402b9413d47d",)
+    _maven_import(artifact = "commons-collections:commons-collections:3.2.1",licenses = ["notice"],sha256 = "87363a4c94eaabeefd8b930cb059f66b64c9f7d632862f23de3012da7660047b",)
+    _maven_import(artifact = "com.intel.analytics.bigdl.core.dist:all:0.11.1",licenses = ["notice"],sha256 = "6d5ff2212f362d289cbb3db0b401fe5ad5005a63aafce251252130ce0d0c6a7a",)

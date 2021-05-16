@@ -704,8 +704,8 @@ public final class MPIWorkerStarter {
    * propagate final worker state to Job Master
    */
   private void sendWorkerFinalStateToJM(JobMasterAPI.WorkerState workerState) {
-    LOG.info(String.format("Worker-%d finished executing with the final status: %s",
-        wInfo.getWorkerID(), workerState.name()));
+//    LOG.info(String.format("Worker-%d finished executing with the final status: %s",
+//        wInfo.getWorkerID(), workerState.name()));
 
     updateWorkerState(workerState);
     WorkerRuntime.close();

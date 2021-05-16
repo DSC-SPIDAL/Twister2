@@ -57,6 +57,7 @@ common_deps_files = [
     "//twister2/api/src/java/edu/iu/dsc/tws/api/driver:driver-api-java",
     "//twister2/proto/utils:proto-utils-java",
     "//twister2/tset/src/java:tset-java",
+    "//twister2/dl/src/java:twister2dl-java",
     "@org_apache_kafka_kafka_clients//:org_apache_kafka_kafka_clients",
     "@maven//:io_kubernetes_client_java_api",
     "@maven//:org_apache_arrow_arrow_vector",

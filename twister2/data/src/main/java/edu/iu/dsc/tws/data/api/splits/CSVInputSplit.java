@@ -183,7 +183,7 @@ public class CSVInputSplit extends FileInputSplit<Object> {
   @Override
   public String nextRecord(Object record) throws IOException {
     if (readLine()) {
-      return readRecord(this.readBuffer, this.currOffset, this.currLen);
+      return readRecord(this.currBuffer, this.currOffset, this.currLen);
     } else {
       this.end = true;
       return null;
@@ -245,7 +245,7 @@ public class CSVInputSplit extends FileInputSplit<Object> {
         }
         readPos++;
       }
-      if (readPos == limit) {
+      if (readPos == limit && this.splitLength == 0) {
         this.end = true;
       }
       if (delimPos == this.delimiter.length) {
